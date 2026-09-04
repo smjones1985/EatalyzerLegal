@@ -1,8 +1,8 @@
-﻿# Eatalyzer FitLink - Legal & Privacy Portal
+# Eatalyzer FitLink - Legal & Privacy Portal
 
 Official repository hosting the public Legal Disclaimer, Terms of Service, and Privacy Policy for **Eatalyzer FitLink**.
 
-- **Live Policy Site:** [https://smjones1985.github.io/EatalyzerLegal/](https://smjones1985.github.io/EatalyzerLegal/)
+- **Live Policy Site:** [https://eatalyzer-legal.pages.dev/](https://eatalyzer-legal.pages.dev/)
 - **Contact:** eatalyzersupport@gmail.com
 - **App Version:** 1.1.6
 - **Terms Version:** 2026-08-21
