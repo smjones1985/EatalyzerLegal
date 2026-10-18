@@ -4,10 +4,10 @@ Official repository hosting the public Legal Disclaimer, Terms of Service, and P
 
 - **Live Policy Site:** [https://eatalyzer-legal.pages.dev/](https://eatalyzer-legal.pages.dev/)
 - **Contact:** eatalyzersupport@gmail.com
-- **App Version:** 1.1.6
-- **Terms Version:** 2026-08-21
+- **App Version:** 1.3.4
+- **Terms Version:** 2026-10-18
 
 ## Contents
-- index.html: Responsive, standalone public web page published via GitHub Pages.
+- index.html: Responsive, standalone public web page published via Cloudflare Pages from `main`.
 - 	erms_and_privacy.md: Raw markdown copy synchronized with the in-app version.
 - icon_512x512.png: High-resolution application branding asset.

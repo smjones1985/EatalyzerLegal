@@ -1,7 +1,7 @@
 # Legal Disclaimer, Terms of Service & Privacy Policy
 
-**Effective Date:** August 21, 2026  
-**Version:** 2026-08-21  
+**Effective Date:** October 18, 2026  
+**Version:** 2026-10-18  
 
 Welcome to **Eatalyzer FitLink** ("the Application", "we", "us", or "the Developers"). Please read this Legal Disclaimer, Terms of Service, and Privacy Policy ("Terms") carefully before using this software. By accessing, downloading, installing, or using Eatalyzer FitLink, you agree to be bound by these Terms. If you do not agree to all of these Terms, you must not use the Application and must uninstall it immediately.
 
@@ -53,10 +53,16 @@ We believe in user privacy and data transparency. Below is an exact accounting o
 
 ### C. AI Processing & Third-Party Transmissions
 * If you enable AI features (such as Photo Review, Voice Food Logging, or AI Coach Chat), the relevant input text or food image is transmitted securely over HTTPS to your chosen AI service provider (Google Gemini or OpenAI) using your configured API key or local model.
-* We do not sell your personal data or fitness logs to data brokers or advertisers.
+* We do not send your health or fitness logs to advertisers. Advertising SDK data is described separately below.
 
 ### D. Backups & User Exports
 * The Application provides manual and automatic backup tools that package your local database and preferences into a zip archive or CSV/JSON files. You retain full control and ownership over where you store or share these export files.
+
+### E. Advertising & Ad Privacy Choices
+* **Advertising provider:** The ad-supported version uses Google AdMob to display and measure ads and prevent fraud. Google's Mobile Ads SDK collects and shares device IP addresses (which can indicate approximate location), app/ad interactions, diagnostic information, and device or account identifiers, including the Android advertising ID where available. This SDK data is separate from your locally stored health and fitness logs.
+* **Your health data:** We do not send your health or fitness logs to AdMob or use those logs to target advertising.
+* **Your choices:** We use Google's User Messaging Platform to present applicable privacy messages. When available, open **Settings → Ad privacy choices** to review or change your advertising privacy choices, including applicable US state opt-out choices. You can also reset or delete your advertising ID in Android settings. Advertising choices do not prevent you from using the app.
+* **More information:** [How Google uses information from apps that use its services](https://policies.google.com/technologies/partner-sites). Ad-Free users are not sent ad requests by the app.
 
 ---
 
@@ -84,5 +90,8 @@ We reserve the right to modify or update these Terms at any time. When material 
 ## 9. Contact & Inquiries
 
 For support, feedback, questions, or privacy-related requests regarding Eatalyzer FitLink, contact us at:  
-eatalyzersupport@gmail.com
+eatalyzersupport@gmail.com  
+
+Official Privacy Policy & Legal Portal:  
+https://eatalyzer-legal.pages.dev/
 
