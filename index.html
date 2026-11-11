@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="icon_512x512.png">
-    <title>Eatalyzer FitLink - Legal Disclaimer, Terms & Privacy Policy</title>
+    <title>Aether Code &bull; Eatalyzer FitLink Legal, Privacy &amp; Developer Portal</title>
+    <meta name="description" content="Official developer portal, app overview, legal disclaimer, terms of service, and privacy policy for Eatalyzer FitLink by Aether Code.">
     <style>
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
+            --card-subtle: #21262d;
             --border-color: #30363d;
             --text-primary: #e6edf3;
             --text-secondary: #8b949e;
@@ -17,11 +19,16 @@
             --accent-blue: #58a6ff;
             --alert-border: #d29922;
             --alert-bg: rgba(210, 153, 34, 0.1);
+            --pill-bg: #238636;
+            --pill-text: #ffffff;
+            --badge-bg: #1f242c;
+            --badge-border: #38424d;
         }
         @media (prefers-color-scheme: light) {
             :root {
                 --bg-color: #f6f8fa;
                 --card-bg: #ffffff;
+                --card-subtle: #f3f4f6;
                 --border-color: #d0d7de;
                 --text-primary: #1f2328;
                 --text-secondary: #656d76;
@@ -30,6 +37,10 @@
                 --accent-blue: #0969da;
                 --alert-border: #9a6700;
                 --alert-bg: #fff8c5;
+                --pill-bg: #1a7f37;
+                --pill-text: #ffffff;
+                --badge-bg: #eaeff4;
+                --badge-border: #c2cbd4;
             }
         }
         * {
@@ -37,36 +48,159 @@
             margin: 0;
             padding: 0;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.65;
-            padding: 40px 20px;
+            padding: 24px 16px;
         }
         .container {
-            max-width: 820px;
+            max-width: 860px;
             margin: 0 auto;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 14px;
+            padding: 36px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
         }
-        header {
+
+        /* Top Brand & Navigation Header */
+        .brand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 24px;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
-        h1 {
-            font-size: 2rem;
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
             color: var(--text-primary);
-            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .meta {
+        .brand-sub {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-weight: 600;
+            display: block;
         }
+        nav.nav-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        nav.nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.15s ease-in-out;
+        }
+        nav.nav-links a:hover {
+            color: var(--accent-blue);
+            background-color: var(--card-subtle);
+        }
+
+        /* Hero / App Spotlight */
+        .hero {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+        .hero-icon {
+            width: 88px;
+            height: 88px;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+            border: 1px solid var(--border-color);
+        }
+        .hero-content h1 {
+            font-size: 1.85rem;
+            color: var(--text-primary);
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: var(--badge-bg);
+            border: 1px solid var(--badge-border);
+            color: var(--text-primary);
+        }
+        .meta-badge.testing {
+            background-color: var(--alert-bg);
+            border-color: var(--alert-border);
+            color: #d29922;
+        }
+
+        /* Feature Grid */
+        .features-section {
+            margin-bottom: 36px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .feature-card {
+            background-color: var(--card-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .feature-card h3 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* Typography & Content Sections */
         h2 {
             font-size: 1.35rem;
             color: var(--accent-light);
@@ -74,6 +208,9 @@
             margin-bottom: 16px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
+        }
+        .section-anchor {
+            scroll-margin-top: 24px;
         }
         h3 {
             font-size: 1.1rem;
@@ -99,6 +236,27 @@
             margin: 20px 0;
             font-size: 0.95rem;
         }
+        .info-card {
+            background-color: var(--card-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+        .info-card table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-card td {
+            padding: 6px 0;
+            font-size: 0.92rem;
+            vertical-align: top;
+        }
+        .info-card td.label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            width: 180px;
+        }
         a {
             color: var(--accent-blue);
             text-decoration: none;
@@ -108,110 +266,236 @@
         }
         footer {
             margin-top: 48px;
-            padding-top: 20px;
+            padding-top: 24px;
             border-top: 1px solid var(--border-color);
             font-size: 0.85rem;
             color: var(--text-secondary);
             text-align: center;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 20px;
+            }
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .badge-row {
+                justify-content: center;
+            }
+            .info-card td {
+                display: block;
+                width: 100% !important;
+            }
+            .info-card td.label {
+                padding-top: 8px;
+                padding-bottom: 2px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header style="display: flex; align-items: center; gap: 20px;">
-            <img src="icon_512x512.png" alt="Eatalyzer FitLink Logo" style="width: 64px; height: 64px; border-radius: 14px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); flex-shrink: 0;">
+        <!-- Top Developer Brand Header -->
+        <header class="brand-header">
             <div>
-                <h1>Legal Disclaimer, Terms &amp; Privacy Policy</h1>
-                <p class="meta"><strong>Application:</strong> Eatalyzer FitLink &bull; <strong>Effective Date:</strong> October 18, 2026 &bull; <strong>Version:</strong> 2026-10-18</p>
+                <span class="brand-sub">Official Developer Portal</span>
+                <span class="brand-title">Aether Code</span>
             </div>
+            <nav class="nav-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms &amp; Disclaimers</a>
+                <a href="#overview">App Overview</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Support</a>
+            </nav>
         </header>
 
-        <p>Welcome to <strong>Eatalyzer FitLink</strong> ("the Application", "we", "us", or "the Developers"). Please read this Legal Disclaimer, Terms of Service, and Privacy Policy ("Terms") carefully before using this software. By accessing, downloading, installing, or using Eatalyzer FitLink, you agree to be bound by these Terms. If you do not agree to all of these Terms, you must not use the Application and must uninstall it immediately.</p>
+        <!-- Legal Disclaimer, Terms & Privacy Policy (Primary Top Section) -->
+        <section id="terms" class="section-anchor">
+            <div style="display: flex; align-items: center; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid var(--border-color); margin-bottom: 28px;">
+                <img src="icon_512x512.png" alt="Eatalyzer FitLink Logo" style="width: 64px; height: 64px; border-radius: 14px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); flex-shrink: 0;">
+                <div>
+                    <h1 style="font-size: 1.9rem; color: var(--text-primary); line-height: 1.25; margin-bottom: 6px;">Legal Disclaimer, Terms &amp; Privacy Policy</h1>
+                    <p class="meta" style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0;">
+                        <strong>Publisher:</strong> Aether Code &bull; <strong>Application:</strong> Eatalyzer FitLink &bull; <strong>Effective Date:</strong> October 18, 2026 &bull; <strong>Version:</strong> 2026-10-18
+                    </p>
+                </div>
+            </div>
 
-        <h2>1. Medical and Health Disclaimer (Not Medical Advice)</h2>
-        <ul>
-            <li><strong>Informational &amp; Self-Tracking Tool Only:</strong> Eatalyzer FitLink is designed solely as a personal fitness, nutrition, and exercise logging and informational tool. It is <strong>NOT</strong> a medical device, clinical diagnostic instrument, or healthcare service.</li>
-            <li><strong>No Doctor-Patient Relationship:</strong> The Application, its calculations, recommendations, nutritional summaries, calorie estimates, workout plans, and AI coaching suggestions do not constitute medical, nutritional, psychiatric, or healthcare advice, diagnosis, or treatment.</li>
-            <li><strong>Consult a Healthcare Professional:</strong> Always seek the advice of your physician, registered dietitian, cardiologist, or other qualified healthcare provider before starting any new diet, caloric deficit/surplus, fasting protocol, supplement regimen, weight loss program, or physical exercise routine.</li>
-            <li><strong>Emergency Disclaimer:</strong> If you experience chest pain, severe shortness of breath, dizziness, faintness, acute physical pain, or any unexpected medical symptoms while exercising or following any dietary program, <strong>immediately stop and contact emergency medical services (such as 911 or your local emergency number).</strong></li>
-        </ul>
+            <p>Welcome to <strong>Eatalyzer FitLink</strong> ("the Application"), developed and published by <strong>Aether Code</strong> ("we", "us", or "the Developer"). Please read this Legal Disclaimer, Terms of Service, and Privacy Policy ("Terms") carefully before using this software. By accessing, downloading, installing, or using Eatalyzer FitLink, you agree to be bound by these Terms. If you do not agree to all of these Terms, you must not use the Application and must uninstall it immediately.</p>
 
-        <h2>2. Artificial Intelligence (AI) and Machine Learning Disclaimer</h2>
-        <ul>
-            <li><strong>AI-Generated Content:</strong> Eatalyzer FitLink includes virtual coaching, conversational assistance, food recognition, and voice logging features powered by Artificial Intelligence (AI) and Large Language Models (LLMs), including Google Gemini, OpenAI models, and on-device machine learning models.</li>
-            <li><strong>Potential for Errors &amp; Hallucinations:</strong> AI models are probabilistic and capable of producing inaccurate, incomplete, misleading, or outdated information ("hallucinations"). AI nutritional estimates, macronutrient counts, and workout suggestions are approximations and should never be relied upon as absolute facts.</li>
-            <li><strong>Independent Verification Required:</strong> You must independently verify any critical nutrition or workout information generated by AI. The developers do not guarantee the accuracy, completeness, or safety of AI-generated responses.</li>
-            <li><strong>Third-Party AI Providers:</strong> When you configure and use your own Google Gemini or OpenAI API keys, your prompt inputs and shared media (such as food photos and voice transcripts) are transmitted directly to the respective AI provider under their terms of service, content policies, and privacy disclosures.</li>
-        </ul>
+            <h2>1. Medical and Health Disclaimer (Not Medical Advice)</h2>
+            <ul>
+                <li><strong>Informational &amp; Self-Tracking Tool Only:</strong> Eatalyzer FitLink is designed solely as a personal fitness, nutrition, and exercise logging and informational tool. It is <strong>NOT</strong> a medical device, clinical diagnostic instrument, or healthcare service.</li>
+                <li><strong>No Doctor-Patient Relationship:</strong> The Application, its calculations, recommendations, nutritional summaries, calorie estimates, workout plans, and AI coaching suggestions do not constitute medical, nutritional, psychiatric, or healthcare advice, diagnosis, or treatment.</li>
+                <li><strong>Consult a Healthcare Professional:</strong> Always seek the advice of your physician, registered dietitian, cardiologist, or other qualified healthcare provider before starting any new diet, caloric deficit/surplus, fasting protocol, supplement regimen, weight loss program, or physical exercise routine.</li>
+                <li><strong>Emergency Disclaimer:</strong> If you experience chest pain, severe shortness of breath, dizziness, faintness, acute physical pain, or any unexpected medical symptoms while exercising or following any dietary program, <strong>immediately stop and contact emergency medical services (such as 911 or your local emergency number).</strong></li>
+            </ul>
 
-        <h2>3. Nutrition, Barcode, and Allergen Warning</h2>
-        <ul>
-            <li><strong>Approximations:</strong> Food databases, barcode lookups, portion estimation tools, and calorie calculations are estimates based on standard nutritional databases and public sources. Actual nutritional values vary by manufacturer, preparation method, and serving size.</li>
-            <li><strong>Allergen Alert:</strong> <strong>The Application CANNOT guarantee allergen detection or prevention.</strong> If you or anyone you prepare food for has food allergies, celiac disease, intolerances, or severe dietary restrictions, you must physically inspect food packaging labels and contact food manufacturers directly. Do not rely on camera scans, AI descriptions, or database entries for allergen safety.</li>
-        </ul>
+            <h2>2. Artificial Intelligence (AI) and Machine Learning Disclaimer</h2>
+            <ul>
+                <li><strong>AI-Generated Content:</strong> Eatalyzer FitLink includes virtual coaching, conversational assistance, food recognition, and voice logging features powered by Artificial Intelligence (AI) and Large Language Models (LLMs), including Google Gemini, OpenAI models, and on-device machine learning models.</li>
+                <li><strong>Potential for Errors &amp; Hallucinations:</strong> AI models are probabilistic and capable of producing inaccurate, incomplete, misleading, or outdated information ("hallucinations"). AI nutritional estimates, macronutrient counts, and workout suggestions are approximations and should never be relied upon as absolute facts.</li>
+                <li><strong>Independent Verification Required:</strong> You must independently verify any critical nutrition or workout information generated by AI. The developers do not guarantee the accuracy, completeness, or safety of AI-generated responses.</li>
+                <li><strong>Third-Party AI Providers:</strong> When you configure and use your own Google Gemini or OpenAI API keys, your prompt inputs and shared media (such as food photos and voice transcripts) are transmitted directly to the respective AI provider under their terms of service, content policies, and privacy disclosures.</li>
+            </ul>
 
-        <h2>4. Physical Exercise and Injury Assumption of Risk</h2>
-        <ul>
-            <li><strong>Inherent Risks of Physical Exertion:</strong> Weightlifting, resistance training, cardiovascular exercise, stretching, and physical conditioning carry inherent risks of muscle strain, joint injury, cardiovascular events, bone fractures, and in rare cases, permanent disability or death.</li>
-            <li><strong>Voluntary Assumption of Risk:</strong> You voluntarily choose to perform any exercises or routines tracked in or suggested by the Application. You assume full responsibility for your physical safety, warmup, proper technique, equipment inspection, and training environment.</li>
-        </ul>
+            <h2>3. Nutrition, Barcode, and Allergen Warning</h2>
+            <ul>
+                <li><strong>Approximations:</strong> Food databases, barcode lookups, portion estimation tools, and calorie calculations are estimates based on standard nutritional databases and public sources. Actual nutritional values vary by manufacturer, preparation method, and serving size.</li>
+                <li><strong>Allergen Alert:</strong> <strong>The Application CANNOT guarantee allergen detection or prevention.</strong> If you or anyone you prepare food for has food allergies, celiac disease, intolerances, or severe dietary restrictions, you must physically inspect food packaging labels and contact food manufacturers directly. Do not rely on camera scans, AI descriptions, or database entries for allergen safety.</li>
+            </ul>
 
-        <h2>5. Privacy Policy &amp; Data Handling Disclosures</h2>
-        <p>We believe in user privacy and data transparency. Below is an exact accounting of how your data is handled:</p>
+            <h2>4. Physical Exercise and Injury Assumption of Risk</h2>
+            <ul>
+                <li><strong>Inherent Risks of Physical Exertion:</strong> Weightlifting, resistance training, cardiovascular exercise, stretching, and physical conditioning carry inherent risks of muscle strain, joint injury, cardiovascular events, bone fractures, and in rare cases, permanent disability or death.</li>
+                <li><strong>Voluntary Assumption of Risk:</strong> You voluntarily choose to perform any exercises or routines tracked in or suggested by the Application. You assume full responsibility for your physical safety, warmup, proper technique, equipment inspection, and training environment.</li>
+            </ul>
+        </section>
 
-        <h3>A. Data Categories &amp; Local Storage</h3>
-        <ul>
-            <li><strong>Health &amp; Fitness Data:</strong> Your profile information (age, gender, height, weight goals), weight logs, body fat percentages, workout routines, exercise sets, and daily food logs are stored <strong>locally on your device</strong> in a private SQLite/Room database.</li>
-            <li><strong>No Proprietary Cloud Accounts Required:</strong> The Application does not require creating a proprietary third-party account to track your fitness.</li>
-        </ul>
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="section-anchor">
+            <h2>5. Privacy Policy &amp; Data Handling Disclosures</h2>
+            <p><strong>Aether Code</strong> is dedicated to user privacy and total data transparency. Below is an exact accounting of how your data is handled:</p>
 
-        <h3>B. Google Health Connect Synchronization</h3>
-        <ul>
-            <li>If you explicitly grant permissions, the Application reads and writes fitness data (such as weight, nutrition, exercise sessions, and total calories burned) via Google Health Connect to synchronize with compatible apps (like Google Fit, Fitbit, or Samsung Health).</li>
-            <li>You can revoke Health Connect permissions at any time via your Android System Settings.</li>
-        </ul>
+            <h3>A. Data Categories &amp; Local Storage</h3>
+            <ul>
+                <li><strong>Health &amp; Fitness Data:</strong> Your profile information (age, gender, height, weight goals), weight logs, body fat percentages, workout routines, exercise sets, and daily food logs are stored <strong>locally on your device</strong> in a private SQLite/Room database.</li>
+                <li><strong>No Proprietary Cloud Accounts Required:</strong> The Application does not require creating a proprietary third-party account to track your fitness.</li>
+            </ul>
 
-        <h3>C. AI Processing &amp; Third-Party Transmissions</h3>
-        <ul>
-            <li>If you enable AI features (such as Photo Review, Voice Food Logging, or AI Coach Chat), the relevant input text or food image is transmitted securely over HTTPS to your chosen AI service provider (Google Gemini or OpenAI) using your configured API key or local model.</li>
-            <li>We do not send your health or fitness logs to advertisers. Advertising SDK data is described separately below.</li>
-        </ul>
+            <h3>B. Google Health Connect Synchronization</h3>
+            <ul>
+                <li>If you explicitly grant permissions, the Application reads and writes fitness data (such as weight, nutrition, exercise sessions, and total calories burned) via Google Health Connect to synchronize with compatible apps (like Google Fit, Fitbit, or Samsung Health).</li>
+                <li>You can revoke Health Connect permissions at any time via your Android System Settings.</li>
+            </ul>
 
-        <h3>D. Backups &amp; User Exports</h3>
-        <ul>
-            <li>The Application provides manual and automatic backup tools that package your local database and preferences into a zip archive or CSV/JSON files. You retain full control and ownership over where you store or share these export files.</li>
-        </ul>
+            <h3>C. AI Processing &amp; Third-Party Transmissions</h3>
+            <ul>
+                <li>If you enable AI features (such as Photo Review, Voice Food Logging, or AI Coach Chat), the relevant input text or food image is transmitted securely over HTTPS to your chosen AI service provider (Google Gemini or OpenAI) using your configured API key or local model.</li>
+                <li>We do not send your health or fitness logs to advertisers. Advertising SDK data is described separately below.</li>
+            </ul>
 
-        <h3>E. Advertising &amp; Ad Privacy Choices</h3>
-        <ul>
-            <li><strong>Advertising provider:</strong> The ad-supported version uses Google AdMob to display and measure ads and prevent fraud. Google's Mobile Ads SDK collects and shares device IP addresses (which can indicate approximate location), app/ad interactions, diagnostic information, and device or account identifiers, including the Android advertising ID where available. This SDK data is separate from your locally stored health and fitness logs.</li>
-            <li><strong>Your health data:</strong> We do not send your health or fitness logs to AdMob or use those logs to target advertising.</li>
-            <li><strong>Your choices:</strong> We use Google's User Messaging Platform to present applicable privacy messages. When available, open <strong>Settings &rarr; Ad privacy choices</strong> to review or change your advertising privacy choices, including applicable US state opt-out choices. You can also reset or delete your advertising ID in Android settings. Advertising choices do not prevent you from using the app.</li>
-            <li><strong>More information:</strong> <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from apps that use its services</a>. Ad-Free users are not sent ad requests by the app.</li>
-        </ul>
+            <h3>D. Backups &amp; User Exports</h3>
+            <ul>
+                <li>The Application provides manual and automatic backup tools that package your local database and preferences into a zip archive or CSV/JSON files. You retain full control and ownership over where you store or share these export files.</li>
+            </ul>
 
-        <h2>6. Terms of Service &amp; Limitation of Liability</h2>
-        <ul>
-            <li><strong>Software Provided "AS IS":</strong> Eatalyzer FitLink is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, whether express, implied, statutory, or otherwise, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
-            <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by applicable law, in no event shall the Application, its developers, authors, contributors, or distributors be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages arising out of or in any way connected with the use or inability to use this Application.</li>
-            <li><strong>User Responsibility:</strong> You are solely responsible for ensuring that your use of the Application complies with all applicable local laws, regulations, and health requirements.</li>
-        </ul>
+            <h3>E. Advertising &amp; Ad Privacy Choices</h3>
+            <ul>
+                <li><strong>Advertising provider:</strong> The ad-supported version uses Google AdMob to display and measure ads and prevent fraud. Google's Mobile Ads SDK collects and shares device IP addresses (which can indicate approximate location), app/ad interactions, diagnostic information, and device or account identifiers, including the Android advertising ID where available. This SDK data is separate from your locally stored health and fitness logs.</li>
+                <li><strong>Your health data:</strong> We do not send your health or fitness logs to AdMob or use those logs to target advertising.</li>
+                <li><strong>Your choices:</strong> We use Google's User Messaging Platform to present applicable privacy messages. When available, open <strong>Settings &rarr; Ad privacy choices</strong> to review or change your advertising privacy choices, including applicable US state opt-out choices. You can also reset or delete your advertising ID in Android settings. Advertising choices do not prevent you from using the app.</li>
+                <li><strong>More information:</strong> <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from apps that use its services</a>. Ad-Free users are not sent ad requests by the app.</li>
+            </ul>
+        </section>
 
-        <h2>7. Updates to these Terms</h2>
-        <p>We reserve the right to modify or update these Terms at any time. When material updates are made, the version date will be updated and the Application will prompt you to review and re-accept the updated Terms before continuing use.</p>
+        <!-- Terms & Compliance Continued -->
+        <section class="section-anchor">
+            <h2>6. Terms of Service &amp; Limitation of Liability</h2>
+            <ul>
+                <li><strong>Software Provided "AS IS":</strong> Eatalyzer FitLink is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, whether express, implied, statutory, or otherwise, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+                <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by applicable law, in no event shall Aether Code, the Application, its authors, contributors, or distributors be liable for any direct, indirect, incidental, special, exemplary, punitive, or consequential damages (including personal injury, health complications, loss of data, loss of profits, or business interruption) arising out of or in any way connected with the use or inability to use this Application.</li>
+                <li><strong>User Responsibility:</strong> You are solely responsible for ensuring that your use of the Application complies with all applicable local laws, regulations, and health requirements.</li>
+            </ul>
 
-        <h2>8. Age Eligibility and Children's Privacy (COPPA)</h2>
-        <div class="highlight-box">
-            <strong>Minimum Age Requirement:</strong> Eatalyzer FitLink is intended solely for individuals who are at least 18 years of age (or at least 13 years of age with the express consent and supervision of a parent or legal guardian).<br><br>
-            <strong>No Children Under 13:</strong> The Application is not directed toward, marketed to, or intended for children under 13 years of age. In compliance with the Children's Online Privacy Protection Act (COPPA) and international child privacy regulations, we do not knowingly collect, store, or process personal or health information from individuals under the age of 13.
-        </div>
+            <h2>7. Updates to these Terms</h2>
+            <p>We reserve the right to modify or update these Terms at any time. When material updates are made, the version date will be updated and the Application will prompt you to review and re-accept the updated Terms before continuing use.</p>
 
-        <h2>9. Contact &amp; Inquiries</h2>
-        <p>For questions, privacy requests, or support regarding Eatalyzer FitLink, please contact:</p>
-        <p><strong>Support Contact:</strong> <a href="mailto:eatalyzersupport@gmail.com">eatalyzersupport@gmail.com</a></p>
+            <h2>8. Age Eligibility and Children's Privacy (COPPA)</h2>
+            <div class="highlight-box">
+                <strong>Minimum Age Requirement:</strong> Eatalyzer FitLink is intended solely for individuals who are at least 18 years of age (or at least 13 years of age with the express consent and supervision of a parent or legal guardian).<br><br>
+                <strong>No Children Under 13:</strong> The Application is not directed toward, marketed to, or intended for children under 13 years of age. In compliance with the Children's Online Privacy Protection Act (COPPA) and international child privacy regulations, we do not knowingly collect, store, or process personal or health information from individuals under the age of 13.
+            </div>
+        </section>
+
+        <!-- Developer Verification & Support Contact Section -->
+        <section id="contact" class="section-anchor">
+            <h2>9. Developer &amp; Support Contact</h2>
+            <p>For questions, support, feedback, or privacy inquiries regarding Eatalyzer FitLink, please contact us directly:</p>
+
+            <div class="info-card">
+                <table>
+                    <tr>
+                        <td class="label">Developer / Publisher:</td>
+                        <td><strong>Aether Code</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Application:</td>
+                        <td>Eatalyzer FitLink</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Google Play Package:</td>
+                        <td><code>com.eatalyzer</code></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Support Email:</td>
+                        <td><a href="mailto:eatalyzersupport@gmail.com"><strong>eatalyzersupport@gmail.com</strong></a></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Target Platform:</td>
+                        <td>Android (Android 8.0 Oreo / API 26+)</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Response Time:</td>
+                        <td>Typically within 1&ndash;2 business days</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- App Presentation, Overview & Features (Moved Toward Bottom) -->
+        <section id="overview" class="hero section-anchor" style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 32px;">
+            <img src="icon_512x512.png" alt="Eatalyzer FitLink App Icon" class="hero-icon">
+            <div class="hero-content">
+                <h2 style="margin-top: 0; border-bottom: none; padding-bottom: 0; margin-bottom: 6px; font-size: 1.6rem; color: var(--text-primary);">About Eatalyzer FitLink</h2>
+                <p class="hero-tagline">Privacy-First Fitness, Nutrition Tracking &amp; AI Coaching for Android</p>
+                <div class="badge-row">
+                    <span class="meta-badge">Developer: Aether Code</span>
+                    <span class="meta-badge">Platform: Android 8.0+</span>
+                    <span class="meta-badge">Package: com.eatalyzer</span>
+                    <span class="meta-badge testing">&bull; Status: In Internal Testing</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section section-anchor" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+            <p><strong>Eatalyzer FitLink</strong> is designed from the ground up to put users in total control of their fitness, nutrition, and exercise data. Unlike traditional health trackers, your personal logs remain entirely local to your device by default, with zero proprietary cloud lock-in.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🔒 Local-First Storage</h3>
+                    <p>All nutrition logs, workouts, and body metrics are stored locally in private on-device SQLite databases. No third-party account required.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🥗 Nutrition &amp; Barcode Scanning</h3>
+                    <p>Instant camera barcode scanning via ZXing &amp; CameraX, flexible meal logging, and comprehensive macro tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏋️ Structured Workout Tracker</h3>
+                    <p>Log exercise routines, sets, reps, and weights with automated volume tracking and progressive overload history.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 Google Health Connect</h3>
+                    <p>Seamless two-way synchronization with Health Connect for weight, exercise sessions, and active calories with full user control.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 Optional AI Coaching</h3>
+                    <p>Intelligent food recognition and conversational coaching powered by Gemini and OpenAI using your own API keys.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📦 Data Portability</h3>
+                    <p>Export your full database and training history anytime in open JSON, CSV, or ZIP backup archives.</p>
+                </div>
+            </div>
+        </section>
 
         <footer>
-            &copy; 2026 Eatalyzer FitLink. All rights reserved.
+            &copy; 2026 <strong>Aether Code</strong>. All rights reserved.<br>
+            Eatalyzer FitLink is developed and published by Aether Code.
         </footer>
     </div>
 </body>

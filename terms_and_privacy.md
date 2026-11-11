@@ -1,9 +1,11 @@
 # Legal Disclaimer, Terms of Service & Privacy Policy
 
+**Publisher / Developer:** Aether Code  
+**Application:** Eatalyzer FitLink (`com.eatalyzer`)  
 **Effective Date:** October 18, 2026  
 **Version:** 2026-10-18  
 
-Welcome to **Eatalyzer FitLink** ("the Application", "we", "us", or "the Developers"). Please read this Legal Disclaimer, Terms of Service, and Privacy Policy ("Terms") carefully before using this software. By accessing, downloading, installing, or using Eatalyzer FitLink, you agree to be bound by these Terms. If you do not agree to all of these Terms, you must not use the Application and must uninstall it immediately.
+Welcome to **Eatalyzer FitLink** ("the Application"), developed and published by **Aether Code** ("we", "us", or "the Developer"). Please read this Legal Disclaimer, Terms of Service, and Privacy Policy ("Terms") carefully before using this software. By accessing, downloading, installing, or using Eatalyzer FitLink, you agree to be bound by these Terms. If you do not agree to all of these Terms, you must not use the Application and must uninstall it immediately.
 
 ---
 
@@ -87,11 +89,12 @@ We reserve the right to modify or update these Terms at any time. When material 
 
 ---
 
-## 9. Contact & Inquiries
+## 9. Developer & Contact Information
 
-For support, feedback, questions, or privacy-related requests regarding Eatalyzer FitLink, contact us at:  
-eatalyzersupport@gmail.com  
+For support, feedback, questions, or privacy-related requests regarding Eatalyzer FitLink:
 
-Official Privacy Policy & Legal Portal:  
-https://eatalyzer-legal.pages.dev/
+* **Developer / Publisher:** Aether Code  
+* **Support Email:** eatalyzersupport@gmail.com  
+* **Developer Portal & Legal:** https://eatalyzer-legal.pages.dev/  
+* **Direct Privacy Policy:** https://eatalyzer-legal.pages.dev/privacy.html  
 
