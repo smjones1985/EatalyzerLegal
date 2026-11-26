@@ -7,7 +7,7 @@ Official repository hosting the public Developer Portal, App Showcase, Legal Dis
 - **Developer / Publisher:** Aether Code
 - **Contact:** eatalyzersupport@gmail.com
 - **Package ID:** `com.eatalyzer`
-- **Terms Version:** 2026-10-18
+- **Terms Version:** 2026-11-25
 
 ## Contents
 - `index.html`: Responsive developer brand landing page, app overview, and full legal terms published via Cloudflare Pages.
